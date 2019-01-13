@@ -9,11 +9,13 @@ class Matrix
   def extract_row(index)
 
     matrix = @string.split("\n")
-    for each in (0..2-1) do
+    @no_of_rows = matrix.size
+    for each in (0..@no_of_rows-1) do
       matrix[each] = matrix[each].split(" ")
     end
+    @no_of_column = matrix[0].size
     row = []
-    for each in (0..2-1) do
+    for each in (0..@no_of_column-1) do
       row << matrix[index][each].to_i
     end
     row
