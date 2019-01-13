@@ -22,14 +22,16 @@ class Matrix
 
   def extract_column(index)
     matrix = @string.split("\n")
-    for each in (0..3) do
+    @no_of_rows = matrix.size
+    for each in (0..@no_of_rows-1) do
       matrix[each] = matrix[each].split(" ")
     end
-    row = []
-    for each in (0..4-1) do
-      row << matrix[each][0].to_i
+    @no_of_column = matrix[0].size
+    column = []
+    for each in (0..@no_of_rows-1) do
+      column << matrix[each][index].to_i
     end
-    row
+    column
   end
 
 end
